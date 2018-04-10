@@ -1,8 +1,9 @@
 {
   "name": "jira-brancher",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "make a git branch name from a JIRA ticket",
   "main": "./lib/index.js",
+  "readme": "README.md",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
