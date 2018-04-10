@@ -20,3 +20,9 @@ JIRA Brancher will store 3 values in `$HOME/.jirabrancher`:
 
 On subsequent runs, you'll just need to provide a JIRA ticket number:
 
+```shell
+$ jirabrancher
+Enter your JIRA ticket or ticket URL: YUM-1
+Use the following branch name:
+YUM-1/Create-A-Delicious-Recipe
+```
