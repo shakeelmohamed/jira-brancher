@@ -16,6 +16,7 @@
     "email": "contact@shakeelmohamed.com",
     "url": "https://ShakeelMohamed.com"
   },
+  "repository": "shakeelmohamed/jira-brancher",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^5.0.1",
