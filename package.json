@@ -1,0 +1,17 @@
+{
+  "name": "jira-brancher",
+  "version": "0.0.1",
+  "description": "make a git branch name from a jira ticket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "js-base64": "^2.4.3",
+    "readline-sync": "^1.4.9",
+    "request": "^2.85.0"
+  }
+}
