@@ -1,13 +1,21 @@
 {
   "name": "jira-brancher",
   "version": "0.0.1",
-  "description": "make a git branch name from a jira ticket",
-  "main": "index.js",
+  "description": "make a git branch name from a JIRA ticket",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "bin": {
+    "jirabrancher": "./bin/jirabrancher.js"
+  },
+  "preferGlobal": true,
+  "author": {
+    "name": "Shakeel Mohamed",
+    "email": "contact@shakeelmohamed.com",
+    "url": "https://ShakeelMohamed.com"
+  },
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^5.0.1",
     "js-base64": "^2.4.3",
