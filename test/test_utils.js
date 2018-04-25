@@ -27,12 +27,13 @@ describe("utils", function() {
             assert.strictEqual("ABC-123", utils.parseJiraTicket("ABC-123"));
         });
         it("should Error from invalid ticket", function() {
+            let gotError = false;
             try {
-                utils.parseJiraTicket("ABC-123");
-                assert.ok(false);
+                utils.parseJiraTicket("ABC123");
             } catch(err) {
-                assert.ok(err);
+                gotError = true;
             }
+            assert.ok(gotError);
         });
     });
 
