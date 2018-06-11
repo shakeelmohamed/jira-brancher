@@ -2,17 +2,45 @@ const assert = require("assert");
 const rand = require("randomstring");
 const utils = require("../lib/utils");
 
+
+
 describe("utils", function() {
     describe("debug", function() {
-        it("should print to stdout if debug enabled", function() {
+        let UD = utils.debug;
+
+        // Terrible practice
+        let count = 0;
+        utils.debug = (msg) => {
+            if (UD(msg)) {
+                count++;
+            }
+        };
+        it("should print to stdout if debug enabled", function(done) {
             process.env.JB_DEBUG = true;
-            // reset after running the test
-            process.env.JB_DEBUG = false;
+            utils.debug("printed");
+
+            setTimeout(function() {
+                // reset after running the test
+                process.env.JB_DEBUG = false;
+                assert.ok(count > 0);
+                utils.debug = UD;
+                done();
+            }, 200);
         });
-        it("should be silent if debug disabled", function() {
-            process.env.JB_DEBUG = false;
-            // TODO: something like this...
-            // process.stdout.on(function("data") { assert.ok(false); setTimeout(function(){ assert.ok(true); }, 100); });
+        it("should be silent if debug disabled", function(done) {
+            count = 0;
+            delete process.env.JB_DEBUG;
+            utils.debug("ignored");
+
+            setTimeout(function(){
+                assert.strictEqual(0, count);
+                utils.debug = UD;
+                process.env.JB_DEBUG = false;
+                done();
+            }, 100);
+        });
+        after(function() {
+            utils.debug = UD;
         });
     });
 
