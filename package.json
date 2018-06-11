@@ -6,9 +6,10 @@
   "readme": "README.md",
   "scripts": {
     "pretest": "npm run lint",
-    "test": "mocha",
+    "test": "nyc mocha",
+    "posttest": "npm run coverage",
     "lint": "eslint lib/* test/* bin/*",
-    "coverage": "nyc -g html npm test"
+    "coverage": "nyc report"
   },
   "bin": {
     "jirabrancher": "./bin/jirabrancher.js"
