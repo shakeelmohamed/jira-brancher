@@ -26,3 +26,11 @@ Enter your JIRA ticket or ticket URL: YUM-1
 Use the following branch name:
 YUM-1/Create-A-Delicious-Recipe
 ```
+
+Or, as a CLI argument.
+
+```shell
+$ jirabrancher YUM-1
+Use the following branch name:
+YUM-1/Create-A-Delicious-Recipe
+```
